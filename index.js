@@ -1,12 +1,22 @@
-var firstArr = [-1, undefined, -4, -5, -3],
-    secondArr = [1, NaN, 3, 5, -3],
-    thirdArr = [2, 5, '22', 7.4];
+let firstArr = [NaN, undefined, -4, -5, -3],
+    secondArr = [0,undefined, NaN, 3, 5, -3],
+    thirdArr = [{}, 'jjf', 5, '22', 7.4];
 
 function findMax(arr) {
-    var max = arr[0];
+    let max;
 
-    for(var i = 1; i < arr.length; i++) {
-        if (!isNaN(arr[i]) && typeof arr[i] === "number" ){
+    for (let i = 0; i < arr.length; i++) {
+
+        if ((!isNaN(arr[i])) && (typeof arr[i] === 'number')) {
+            max = arr[i];
+            break;
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if ((!isNaN(arr[i])) && (typeof arr[i] === 'number')) {
+
             if (max < arr[i]) {
                 max = arr[i];
             }
@@ -17,10 +27,20 @@ function findMax(arr) {
 }
 
 function findMin(arr) {
-    var min = arr[0];
+    let min;
 
-    for(var i = 1; i < arr.length; i++) {
-        if (!isNaN(arr[i]) && typeof arr[i] === 'number' ){
+    for (let i = 0; i < arr.length; i++) {
+
+        if ((!isNaN(arr[i])) && (typeof arr[i] === 'number')) {
+            min = arr[i];
+            break;
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if ((!isNaN(arr[i])) && (typeof arr[i] === 'number')) {
+
             if (min > arr[i]) {
                 min = arr[i];
             }
@@ -31,10 +51,11 @@ function findMin(arr) {
 }
 
 function findSum(arr) {
-    var sum = 0;
+    let sum = 0;
 
-    for(var i = 0; i < arr.length; i++) {
-        if (!isNaN(arr[i]) && typeof arr[i] === 'number') {
+    for (let i = 0; i < arr.length; i++) {
+
+        if ((!isNaN(arr[i])) && (typeof arr[i] === 'number')) {
             sum += arr[i];
         }
     }
