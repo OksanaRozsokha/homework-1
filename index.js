@@ -1,23 +1,11 @@
-let firstArr = [NaN, undefined, -4, -5, -3],
+var firstArr = [NaN, undefined, -4, -5, -3],
     secondArr = [0,undefined, NaN, 3, 5, -3],
     thirdArr = [{}, 'jjf', 5, '22', 7.4];
 
-let max;
-let min;
-
-function initialValues(arr) {
-    for(let i = 0; i < arr.length; i++) {
-        if ((!isNaN(arr[i])) && (typeof arr[i] === 'number')) {
-            max = arr[i];
-            min = arr[i];
-            break;
-        }
-    }
-}
-
 function findMinMaxSum(arr) {
-    initialValues(arr);
-    let sum = 0;
+    var min;
+    var max;
+    var sum = 0;
 
     for (let i = 0; i < arr.length; i++) {
 
@@ -25,20 +13,20 @@ function findMinMaxSum(arr) {
 
             sum += arr[i];
 
-            if (max < arr[i]) {
+            if ((max < arr[i]) || ( typeof max === 'undefined')) {
                 max = arr[i];
             }
 
-            if (min > arr[i]) {
+            if ((min > arr[i]) || ( typeof min === 'undefined')) {
                 min = arr[i];
             }
         }
     }
 
     return {
-        'the max value is': max,
-        'the min value is': min,
-        'the sum value is': sum
+        max: max,
+        min: min,
+        sum: sum
     }
 }
 
